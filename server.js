@@ -21,9 +21,9 @@ io.on("connection", (socket) => {
 
   socket.on("send_message", async ({ text, langName, langType }) => {
     // console.log("Message:", langName, langType);
-    if(!text){
-        return NextResponse.json({error: "Text is required"}, {status: 400});
-      }
+    if (!text) {
+      return NextResponse.json({ error: "Text is required" }, { status: 400 });
+    }
     let prompt = `
 You are a friendly assistant.
 The user wants you to always respond ONLY in ${langName} (${langType}).
